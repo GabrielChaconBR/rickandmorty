@@ -3,9 +3,9 @@ import XCTest
 class RemoteRickAndMorty {
     
     private let url: URL
-    private let httpClient: HttpClient
+    private let httpClient: HttpGetClient
     
-    init(url: URL, httpClient: HttpClient) {
+    init(url: URL, httpClient: HttpGetClient) {
         self.url = url
         self.httpClient = httpClient
     }
@@ -15,7 +15,7 @@ class RemoteRickAndMorty {
     }
 }
 
-protocol HttpClient {
+protocol HttpGetClient {
     func get(url: URL)
 }
 
@@ -29,7 +29,7 @@ final class RemoteRickAndMortyTests: XCTestCase {
         XCTAssertEqual(httpClientSpy.url, url)
     }
     
-    class HttpClientSpy: HttpClient {
+    class HttpClientSpy: HttpGetClient {
         
         var url: URL?
         
