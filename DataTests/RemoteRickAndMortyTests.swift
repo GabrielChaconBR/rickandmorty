@@ -27,8 +27,10 @@ final class RemoteRickAndMortyTests: XCTestCase {
         let sut = RemoteRickAndMorty(url: url, httpClient: httpClientSpy)
         sut.getRickAndMorty()
         XCTAssertEqual(httpClientSpy.url, url)
-    }
-    
+    }    
+}
+
+extension RemoteRickAndMortyTests {
     class HttpClientSpy: HttpGetClient {
         
         var url: URL?
@@ -37,5 +39,4 @@ final class RemoteRickAndMortyTests: XCTestCase {
             self.url = url
         }
     }
-
 }
