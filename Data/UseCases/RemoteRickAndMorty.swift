@@ -18,7 +18,9 @@ public final class RemoteRickAndMorty {
         self.httpClient = httpClient
     }
     
-    public func getRickAndMorty() {
-        httpClient.get(to: url)
+    public func getRickAndMorty(completion: @escaping (DomainError) -> Void) {
+        httpClient.get(to: url) { error in
+            completion(.unexpected)
+        }
     }
 }
