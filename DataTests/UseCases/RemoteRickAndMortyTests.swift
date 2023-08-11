@@ -11,16 +11,24 @@ final class RemoteRickAndMortyTests: XCTestCase {
         XCTAssertEqual(httpClientSpy.urls, [url])
     }
     
-    func test_get_should_complete_with_error_if_client_fails() {
+    func test_get_should_complete_with_error_if_client_completes_with_error() {
         let (sut, httpClientSpy) = makeSut()
         let exp = expectation(description: "waiting")
-        sut.getRickAndMorty() { error in
-            XCTAssertEqual(error, .unexpected)
+        sut.getRickAndMorty() { result in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .unexpected)
+            case .success:
+                XCTFail("Expected error receive \(result) instead")
+            }
+            
             exp.fulfill()
         }
         httpClientSpy.completeWithError(.noConnectivity)
         wait(for: [exp], timeout: 2)
     }
+    
+    
 }
 
 extension RemoteRickAndMortyTests {
@@ -34,15 +42,15 @@ extension RemoteRickAndMortyTests {
     class HttpClientSpy: HttpGetClientProtocol {
         
         var urls = [URL]()
-        var completion: ((HttpError) -> Void)?
+        var completion: ((Result<Data, HttpError>) -> Void)?
         
-        func get(to url: URL, completion: @escaping (HttpError) -> Void) {
+        func get(to url: URL, completion: @escaping (Result<Data, HttpError>) -> Void) {
             self.urls.append(url)
             self.completion = completion
         }
         
         func completeWithError(_ error: HttpError) {
-            completion?(error)
+            completion?(.failure(error))
         }
     }
 }

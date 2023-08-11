@@ -8,7 +8,7 @@
 import Foundation
 import Domain
 
-public final class RemoteRickAndMorty {
+public final class RemoteRickAndMorty: GetRickAndMortyProtocol {
     
     private let url: URL
     private let httpClient: HttpGetClientProtocol
@@ -18,9 +18,9 @@ public final class RemoteRickAndMorty {
         self.httpClient = httpClient
     }
     
-    public func getRickAndMorty(completion: @escaping (DomainError) -> Void) {
+    public func getRickAndMorty(completion: @escaping (Result<RickAndMortyModel, DomainError>) -> Void) {
         httpClient.get(to: url) { error in
-            completion(.unexpected)
+            completion(.failure(.unexpected))
         }
     }
 }

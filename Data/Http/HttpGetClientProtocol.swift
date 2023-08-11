@@ -9,5 +9,5 @@ import Foundation
 import Domain
 
 public protocol HttpGetClientProtocol {
-    func get(to url: URL, completion: @escaping (HttpError) -> Void)
+    func get(to url: URL, completion: @escaping (Result<Data, HttpError>) -> Void)
 }

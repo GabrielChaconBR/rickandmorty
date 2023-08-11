@@ -1,6 +1,6 @@
 import Foundation
 
 public protocol GetRickAndMortyProtocol {
-    func getRickAndMorty(completion: @escaping (Result<RickAndMortyModel, Error>) -> Void)
+    func getRickAndMorty(completion: @escaping (Result<RickAndMortyModel, DomainError>) -> Void)
 }
 
