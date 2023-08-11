@@ -27,7 +27,7 @@ final class RemoteRickAndMortyTests: XCTestCase {
         wait(for: [exp], timeout: 2)
     }
     
-    func test_get_should_complete_with_data_if_client_completes_with_data() {
+    func test_get_should_complete_with_data_if_client_completes_with_valid_data() {
         let (sut, httpClientSpy) = makeSut()
         let exp = expectation(description: "waiting")
         let expectedRickAndMorty = makeRickAndMortyModel()
@@ -41,6 +41,22 @@ final class RemoteRickAndMortyTests: XCTestCase {
             exp.fulfill()
         }
         httpClientSpy.completeWithData(expectedRickAndMorty.toData()!)
+        wait(for: [exp], timeout: 2)
+    }
+    
+    func test_get_should_complete_with_error_if_client_completes_with_invalid_date() {
+        let (sut, httpClientSpy) = makeSut()
+        let exp = expectation(description: "waiting")
+        sut.getRickAndMorty() { result in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .unexpected)
+            case .success:
+                XCTFail("Expected error receive \(result) instead")
+            }
+            exp.fulfill()
+        }
+        httpClientSpy.completeWithData(Data("invalid_data".utf8))
         wait(for: [exp], timeout: 2)
     }
 }

@@ -24,6 +24,8 @@ public final class RemoteRickAndMorty: GetRickAndMortyProtocol {
                 case .success(let data):
                 if let model: RickAndMortyModel = data.toModel() {
                     completion(.success(model))
+                } else {
+                    completion(.failure(.unexpected))
                 }
             case .failure:
                 completion(.failure(.unexpected))
