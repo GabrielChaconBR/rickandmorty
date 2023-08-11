@@ -32,6 +32,18 @@ final class RemoteRickAndMortyTests: XCTestCase {
             httpClientSpy.completeWithData(makeInvalidData())
         })
     }
+    
+    func test_get_should_not_complete_if_sut_has_been_deallocated() {
+        let httpClientSpy = HttpClientSpy()
+        var sut: RemoteRickAndMorty? = RemoteRickAndMorty(url: makeUrl(), httpClient: httpClientSpy)
+        var result: Result<RickAndMortyModel, DomainError>?
+        sut?.getRickAndMorty(completion: { result = $0
+            
+        })
+        sut = nil
+        httpClientSpy.completeWithError(.noConnectivity)
+        XCTAssertNil(result)
+    }
 }
 
 extension RemoteRickAndMortyTests {
