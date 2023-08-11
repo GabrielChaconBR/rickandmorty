@@ -19,8 +19,15 @@ public final class RemoteRickAndMorty: GetRickAndMortyProtocol {
     }
     
     public func getRickAndMorty(completion: @escaping (Result<RickAndMortyModel, DomainError>) -> Void) {
-        httpClient.get(to: url) { error in
-            completion(.failure(.unexpected))
+        httpClient.get(to: url) { result in
+            switch result {
+                case .success(let data):
+                if let model: RickAndMortyModel = data.toModel() {
+                    completion(.success(model))
+                }
+            case .failure:
+                completion(.failure(.unexpected))
+            }
         }
     }
 }
