@@ -21,7 +21,7 @@ protocol HttpGetClient {
 
 final class RemoteRickAndMortyTests: XCTestCase {
     
-    func test_() {
+    func test_get_should_call_httpClient_with_correct_url() {
         let url = URL(string: "http://something.com")!
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteRickAndMorty(url: url, httpClient: httpClientSpy)
