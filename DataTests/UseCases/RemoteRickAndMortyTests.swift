@@ -77,42 +77,4 @@ extension RemoteRickAndMortyTests {
         action()
         wait(for: [exp], timeout: 2)
     }
-    
-    func checkMemoryLeak(for instance: AnyObject,
-                         file: StaticString = #file, line: UInt = #line) {
-        addTeardownBlock { [weak instance] in
-            XCTAssertNil(instance, file: file, line: line)
-        }
-    }
-    
-    func makeRickAndMortyModel() -> RickAndMortyModel {
-        RickAndMortyModel(characters: "http://characters-url.com")
-    }
-    
-    func makeUrl() -> URL {
-        URL(string: "http://something.com")!
-    }
-    
-    func makeInvalidData() -> Data {
-        Data("invalid_data".utf8)
-    }
-    
-    class HttpClientSpy: HttpGetClientProtocol {
-        
-        var urls = [URL]()
-        var completion: ((Result<Data, HttpError>) -> Void)?
-        
-        func get(to url: URL, completion: @escaping (Result<Data, HttpError>) -> Void) {
-            self.urls.append(url)
-            self.completion = completion
-        }
-        
-        func completeWithError(_ error: HttpError) {
-            completion?(.failure(error))
-        }
-        
-        func completeWithData(_ data: Data) {
-            completion?(.success(data))
-        }
-    }
 }
