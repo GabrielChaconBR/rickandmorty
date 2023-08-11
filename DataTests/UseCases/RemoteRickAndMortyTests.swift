@@ -36,9 +36,12 @@ final class RemoteRickAndMortyTests: XCTestCase {
 
 extension RemoteRickAndMortyTests {
     
-    func makeSut(url: URL = URL(string: "http://default.com")!) -> (sut: RemoteRickAndMorty, httpClientSpy: HttpClientSpy) {
+    func makeSut(url: URL = URL(string: "http://default.com")!,
+                 file: StaticString = #file, line: UInt = #line) -> (sut: RemoteRickAndMorty, httpClientSpy: HttpClientSpy) {
         let httpClientSpy = HttpClientSpy()
         let sut = RemoteRickAndMorty(url: url, httpClient: httpClientSpy)
+        checkMemoryLeak(for: sut, file: file, line: line)
+        checkMemoryLeak(for: httpClientSpy, file: file, line: line)
         return (sut, httpClientSpy)
     }
     
@@ -61,6 +64,13 @@ extension RemoteRickAndMortyTests {
         }
         action()
         wait(for: [exp], timeout: 2)
+    }
+    
+    func checkMemoryLeak(for instance: AnyObject,
+                         file: StaticString = #file, line: UInt = #line) {
+        addTeardownBlock { [weak instance] in
+            XCTAssertNil(instance, file: file, line: line)
+        }
     }
     
     func makeRickAndMortyModel() -> RickAndMortyModel {
