@@ -1,23 +1,5 @@
 import XCTest
-
-class RemoteRickAndMorty {
-    
-    private let url: URL
-    private let httpClient: HttpGetClient
-    
-    init(url: URL, httpClient: HttpGetClient) {
-        self.url = url
-        self.httpClient = httpClient
-    }
-    
-    func getRickAndMorty() {
-        httpClient.get(to: url)
-    }
-}
-
-protocol HttpGetClient {
-    func get(to url: URL)
-}
+import Data
 
 final class RemoteRickAndMortyTests: XCTestCase {
     
@@ -37,7 +19,7 @@ extension RemoteRickAndMortyTests {
         return (sut, httpClientSpy)
     }
     
-    class HttpClientSpy: HttpGetClient {
+    class HttpClientSpy: HttpGetClientProtocol {
         
         var url: URL?
         
