@@ -116,8 +116,8 @@
 		08A9268F2A8554F50003E93E /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				08C8724C2A86A1E30034E6B6 /* GetRickAndMortyProtocol.swift */,
-				08C8724E2A86AB160034E6B6 /* RickAndMortyModel.swift */,
+				08C872732A86BEE60034E6B6 /* UseCases */,
+				08C872742A86BEEF0034E6B6 /* Models */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -125,8 +125,8 @@
 		08C872562A86AB8E0034E6B6 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				08C8726F2A86BCF00034E6B6 /* RemoteRickAndMorty.swift */,
-				08C872712A86BD8B0034E6B6 /* HttpGetClientProtocol.swift */,
+				08C872752A86BF100034E6B6 /* UseCases */,
+				08C872762A86BF230034E6B6 /* Http */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -134,9 +134,49 @@
 		08C872602A86AB8E0034E6B6 /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				08C872612A86AB8E0034E6B6 /* RemoteRickAndMortyTests.swift */,
+				08C872772A86BF340034E6B6 /* UseCases */,
 			);
 			path = DataTests;
+			sourceTree = "<group>";
+		};
+		08C872732A86BEE60034E6B6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				08C8724C2A86A1E30034E6B6 /* GetRickAndMortyProtocol.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		08C872742A86BEEF0034E6B6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08C8724E2A86AB160034E6B6 /* RickAndMortyModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		08C872752A86BF100034E6B6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				08C8726F2A86BCF00034E6B6 /* RemoteRickAndMorty.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		08C872762A86BF230034E6B6 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				08C872712A86BD8B0034E6B6 /* HttpGetClientProtocol.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		08C872772A86BF340034E6B6 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				08C872612A86AB8E0034E6B6 /* RemoteRickAndMortyTests.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		AB551E63675D9255404A3632 /* Frameworks */ = {
