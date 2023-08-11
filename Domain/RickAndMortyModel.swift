@@ -1,5 +1,5 @@
 import Foundation
 
-struct RickAndMortyModel {
-    var characters: String
+public struct RickAndMortyModel {
+    public var characters: String
 }
