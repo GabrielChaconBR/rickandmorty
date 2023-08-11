@@ -42,19 +42,20 @@ extension RemoteRickAndMortyTests {
         return (sut, httpClientSpy)
     }
     
-    func expect(_ sut: RemoteRickAndMorty, completeWith expectedResult: Result<RickAndMortyModel, DomainError>, when action: () -> Void) {
+    func expect(_ sut: RemoteRickAndMorty, completeWith expectedResult: Result<RickAndMortyModel, DomainError>, when action: () -> Void,
+                file: StaticString = #file, line: UInt = #line) {
         let exp = expectation(description: "waiting")
         sut.getRickAndMorty() { receivedResult in
             
             switch (expectedResult, receivedResult) {
             case (.failure(let expectedError), .failure(let receivedError)):
-                XCTAssertEqual(expectedError, receivedError)
+                XCTAssertEqual(expectedError, receivedError, file: file, line: line)
                 
             case (.success(let expectedData), .success(let receviedData)):
-                XCTAssertEqual(expectedData, receviedData)
+                XCTAssertEqual(expectedData, receviedData, file: file, line: line)
                 
             default:
-                XCTFail("Expected \(expectedResult) receive \(receivedResult) instead")
+                XCTFail("Expected \(expectedResult) receive \(receivedResult) instead", file: file, line: line)
             }
             exp.fulfill()
         }
