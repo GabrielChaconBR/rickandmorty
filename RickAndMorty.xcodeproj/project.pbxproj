@@ -6,8 +6,15 @@
 	objectVersion = 56;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		29C7DB57D5EC02D2F637000F /* Pods_Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFE451E36E6C8748419E52AE /* Pods_Domain.framework */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		08A9268E2A8554F50003E93E /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2DE6020550295DE31EE7158A /* Pods-Domain.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.debug.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.debug.xcconfig"; sourceTree = "<group>"; };
+		9F656581F8D4538E7B889BFC /* Pods-Domain.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Domain.release.xcconfig"; path = "Target Support Files/Pods-Domain/Pods-Domain.release.xcconfig"; sourceTree = "<group>"; };
+		BFE451E36E6C8748419E52AE /* Pods_Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -15,6 +22,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29C7DB57D5EC02D2F637000F /* Pods_Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -26,6 +34,8 @@
 			children = (
 				08A9268F2A8554F50003E93E /* Domain */,
 				08A926732A85545E0003E93E /* Products */,
+				DD48EB7CAF802AF73905A001 /* Pods */,
+				AB551E63675D9255404A3632 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -42,6 +52,24 @@
 			children = (
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		AB551E63675D9255404A3632 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFE451E36E6C8748419E52AE /* Pods_Domain.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD48EB7CAF802AF73905A001 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2DE6020550295DE31EE7158A /* Pods-Domain.debug.xcconfig */,
+				9F656581F8D4538E7B889BFC /* Pods-Domain.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -61,6 +89,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 08A926922A8554F50003E93E /* Build configuration list for PBXNativeTarget "Domain" */;
 			buildPhases = (
+				51245BCBFC52C313ECC00CC8 /* [CP] Check Pods Manifest.lock */,
 				08A926892A8554F50003E93E /* Headers */,
 				08A9268A2A8554F50003E93E /* Sources */,
 				08A9268B2A8554F50003E93E /* Frameworks */,
@@ -117,6 +146,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		51245BCBFC52C313ECC00CC8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Domain-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		08A9268A2A8554F50003E93E /* Sources */ = {
@@ -245,6 +299,7 @@
 		};
 		08A926932A8554F50003E93E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2DE6020550295DE31EE7158A /* Pods-Domain.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -276,6 +331,7 @@
 		};
 		08A926942A8554F50003E93E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9F656581F8D4538E7B889BFC /* Pods-Domain.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
