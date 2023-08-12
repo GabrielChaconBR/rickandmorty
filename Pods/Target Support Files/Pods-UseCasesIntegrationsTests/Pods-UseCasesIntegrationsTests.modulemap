@@ -1,0 +1,6 @@
+framework module Pods_UseCasesIntegrationsTests {
+  umbrella header "Pods-UseCasesIntegrationsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

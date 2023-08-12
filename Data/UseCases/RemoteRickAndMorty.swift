@@ -23,7 +23,7 @@ public final class RemoteRickAndMorty: GetRickAndMortyProtocol {
             guard self != nil else { return }
             switch result {
                 case .success(let data):
-                if let model: RickAndMortyModel = data.toModel() {
+                if let model: RickAndMortyModel = data?.toModel() {
                     completion(.success(model))
                 } else {
                     completion(.failure(.unexpected))
