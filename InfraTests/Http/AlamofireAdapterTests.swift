@@ -52,6 +52,8 @@ class AlamofireAdapterTests: XCTestCase {
         expectResult(.failure(.serverError), when: (makeValidData(), makeHttpResponse(statusCode: 599), nil))
         expectResult(.failure(.unauthorized), when: (makeValidData(), makeHttpResponse(statusCode: 401), nil))
         expectResult(.failure(.forbidden), when: (makeValidData(), makeHttpResponse(statusCode: 403), nil))
+        expectResult(.failure(.noConnectivity), when: (makeValidData(), makeHttpResponse(statusCode: 300), nil))
+        expectResult(.failure(.noConnectivity), when: (makeValidData(), makeHttpResponse(statusCode: 100), nil))
     }
 }
 
