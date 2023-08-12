@@ -7,6 +7,7 @@
 
 import XCTest
 import Alamofire
+import Domain
 
 class AlamofireAdapter {
     
@@ -16,8 +17,16 @@ class AlamofireAdapter {
         self.session = session
     }
     
-    func get(to url: URL) {
-        session.request(url).resume()
+    func get(to url: URL, completion: @escaping (Result<Data, HttpError>) -> Void) {
+        session.request(url).responseData {
+            dataResponse in
+            switch dataResponse.result {
+            case .failure:
+                completion(.failure(.noConnectivity))
+            case .success:
+                break
+            }
+        }
     }
 }
 
@@ -26,11 +35,27 @@ class AlamofireAdapterTests: XCTestCase {
     func test_get_should_make_request_with_valid_url_and_method() {
         let url = makeUrl()
         let sut = makeSut()
-        sut.get(to: url)
+        sut.get(to: url) { _ in }
         let exp = expectation(description: "waiting")
         UrlProtocolStub.observeRequest { request in
             XCTAssertEqual(url, request.url)
             XCTAssertEqual("GET", request.httpMethod)
+            exp.fulfill()
+        }
+        wait(for: [exp], timeout: 1)
+    }
+    
+    func test_get_should_complete_with_error_when_completes_with_error() {
+        let sut = makeSut()
+        UrlProtocolStub.simulate(data: nil, response: nil, error: makeError())
+        let exp = expectation(description: "waiting")
+        sut.get(to: makeUrl()) { result in
+            switch result {
+            case .failure(let error):
+                XCTAssertEqual(error, .noConnectivity)
+            case .success:
+                XCTFail("Expected error got \(result) instead")
+            }
             exp.fulfill()
         }
         wait(for: [exp], timeout: 1)
@@ -52,9 +77,18 @@ extension AlamofireAdapterTests {
 class UrlProtocolStub: URLProtocol {
     
     static var emit: ((URLRequest) -> Void)?
+    static var data: Data?
+    static var response: HTTPURLResponse?
+    static var error: Error?
     
     static func observeRequest(completion: @escaping (URLRequest) -> Void) {
         UrlProtocolStub.emit = completion
+    }
+    
+    static func simulate(data: Data?, response: HTTPURLResponse?, error: Error?) {
+        UrlProtocolStub.data = data
+        UrlProtocolStub.response = response
+        UrlProtocolStub.error = error
     }
 
     override class func canInit(with request: URLRequest) -> Bool {
@@ -67,6 +101,17 @@ class UrlProtocolStub: URLProtocol {
     
     override func startLoading() {
         UrlProtocolStub.emit?(request)
+        
+        if let data = UrlProtocolStub.data {
+            client?.urlProtocol(self, didLoad: data)
+        }
+        if let response = UrlProtocolStub.response {
+            client?.urlProtocol(self, didReceive: response, cacheStoragePolicy: .notAllowed)
+        }
+        if let error = UrlProtocolStub.error {
+            client?.urlProtocol(self, didFailWithError: error)
+        }
+        client?.urlProtocolDidFinishLoading(self)
     }
     
     override func stopLoading() {}

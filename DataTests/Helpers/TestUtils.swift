@@ -14,3 +14,7 @@ func makeUrl() -> URL {
 func makeInvalidData() -> Data {
     Data("invalid_data".utf8)
 }
+
+func makeError() -> Error {
+    NSError(domain: "some-error", code: 0)
+}
