@@ -15,6 +15,10 @@ func makeValidData() -> Data {
     Data("{\"url\":\"something.com\"}".utf8)
 }
 
+func makeEmptyData() -> Data {
+    Data()
+}
+
 func makeInvalidData() -> Data {
     Data("invalid_data".utf8)
 }
