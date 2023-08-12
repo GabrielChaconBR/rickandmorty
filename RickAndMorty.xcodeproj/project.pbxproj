@@ -30,6 +30,7 @@
 		08C872AB2A86EC1A0034E6B6 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C872832A86E5290034E6B6 /* TestExtension.swift */; };
 		08C872AC2A86EC250034E6B6 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C872852A86E5710034E6B6 /* TestUtils.swift */; };
 		08C872AD2A86F1D70034E6B6 /* Pods_Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DF36E4928EF0DF15D3D2C6 /* Pods_Infra.framework */; };
+		08C872B32A871F910034E6B6 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C872B22A871F910034E6B6 /* AlamofireAdapter.swift */; };
 		5B4799DCF3130EB89874F99E /* Pods_InfraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC7431ECEDF75649B376ADD /* Pods_InfraTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		08C872982A86EB030034E6B6 /* InfraTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InfraTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C8729D2A86EB030034E6B6 /* AlamofireAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterTests.swift; sourceTree = "<group>"; };
 		08C872AF2A86F1F10034E6B6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08C872B22A871F910034E6B6 /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		7E0B51C9546621C0162FE01D /* Pods-Infra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Infra.debug.xcconfig"; path = "Target Support Files/Pods-Infra/Pods-Infra.debug.xcconfig"; sourceTree = "<group>"; };
 		D8D4B320BEF0E53CD026696D /* Pods-InfraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfraTests.debug.xcconfig"; path = "Target Support Files/Pods-InfraTests/Pods-InfraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7DF36E4928EF0DF15D3D2C6 /* Pods_Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -298,6 +300,7 @@
 		08C872922A86EB030034E6B6 /* Infra */ = {
 			isa = PBXGroup;
 			children = (
+				08C872B42A8720210034E6B6 /* Http */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -308,6 +311,14 @@
 				08C8729D2A86EB030034E6B6 /* AlamofireAdapterTests.swift */,
 			);
 			path = InfraTests;
+			sourceTree = "<group>";
+		};
+		08C872B42A8720210034E6B6 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				08C872B22A871F910034E6B6 /* AlamofireAdapter.swift */,
+			);
+			path = Http;
 			sourceTree = "<group>";
 		};
 		AB551E63675D9255404A3632 /* Frameworks */ = {
@@ -478,6 +489,7 @@
 					};
 					08C872902A86EB030034E6B6 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					08C872972A86EB030034E6B6 = {
 						CreatedOnToolsVersion = 14.2;
@@ -647,6 +659,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08C872B32A871F910034E6B6 /* AlamofireAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,6 +981,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7E0B51C9546621C0162FE01D /* Pods-Infra.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -990,6 +1004,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1000,6 +1015,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EDBD8DFBE2326B26BC9D7B2A /* Pods-Infra.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1032,6 +1048,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8D4B320BEF0E53CD026696D /* Pods-InfraTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1049,6 +1066,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = ED365CE378B15AC1454D9EA9 /* Pods-InfraTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
