@@ -31,6 +31,7 @@
 		08C872AC2A86EC250034E6B6 /* TestUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C872852A86E5710034E6B6 /* TestUtils.swift */; };
 		08C872AD2A86F1D70034E6B6 /* Pods_Infra.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DF36E4928EF0DF15D3D2C6 /* Pods_Infra.framework */; };
 		08C872B32A871F910034E6B6 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C872B22A871F910034E6B6 /* AlamofireAdapter.swift */; };
+		08C872B72A87208F0034E6B6 /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C872B62A87208F0034E6B6 /* UrlProtocolStub.swift */; };
 		5B4799DCF3130EB89874F99E /* Pods_InfraTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ECC7431ECEDF75649B376ADD /* Pods_InfraTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +113,7 @@
 		08C8729D2A86EB030034E6B6 /* AlamofireAdapterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterTests.swift; sourceTree = "<group>"; };
 		08C872AF2A86F1F10034E6B6 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C872B22A871F910034E6B6 /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
+		08C872B62A87208F0034E6B6 /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
 		7E0B51C9546621C0162FE01D /* Pods-Infra.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Infra.debug.xcconfig"; path = "Target Support Files/Pods-Infra/Pods-Infra.debug.xcconfig"; sourceTree = "<group>"; };
 		D8D4B320BEF0E53CD026696D /* Pods-InfraTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InfraTests.debug.xcconfig"; path = "Target Support Files/Pods-InfraTests/Pods-InfraTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7DF36E4928EF0DF15D3D2C6 /* Pods_Infra.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Infra.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -308,7 +310,7 @@
 		08C8729C2A86EB030034E6B6 /* InfraTests */ = {
 			isa = PBXGroup;
 			children = (
-				08C8729D2A86EB030034E6B6 /* AlamofireAdapterTests.swift */,
+				08C872B52A87207E0034E6B6 /* Http */,
 			);
 			path = InfraTests;
 			sourceTree = "<group>";
@@ -317,6 +319,15 @@
 			isa = PBXGroup;
 			children = (
 				08C872B22A871F910034E6B6 /* AlamofireAdapter.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		08C872B52A87207E0034E6B6 /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				08C8729D2A86EB030034E6B6 /* AlamofireAdapterTests.swift */,
+				08C872B62A87208F0034E6B6 /* UrlProtocolStub.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -670,6 +681,7 @@
 				08C8729E2A86EB030034E6B6 /* AlamofireAdapterTests.swift in Sources */,
 				08C872AC2A86EC250034E6B6 /* TestUtils.swift in Sources */,
 				08C872AB2A86EC1A0034E6B6 /* TestExtension.swift in Sources */,
+				08C872B72A87208F0034E6B6 /* UrlProtocolStub.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
