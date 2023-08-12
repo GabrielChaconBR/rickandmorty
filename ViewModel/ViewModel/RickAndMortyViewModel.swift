@@ -19,7 +19,8 @@ public final class RickAndMortyViewModel {
     }
     
     public func rickAndMorty() {
-        getRickAndMorty.getRickAndMorty { result in
+        getRickAndMorty.getRickAndMorty { [weak self] result in
+            guard let self = self else { return }
             switch result {
             case .failure:
                 self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente."))

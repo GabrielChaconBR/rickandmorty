@@ -34,8 +34,10 @@ class RickAndMortyViewModelTests: XCTestCase {
 
 extension RickAndMortyViewModelTests {
     
-    func makeSut(alertView: AlertViewSpy = AlertViewSpy(), getRickAndMortySpy: GetRickAndMortySpy = GetRickAndMortySpy()) -> RickAndMortyViewModel {
+    func makeSut(alertView: AlertViewSpy = AlertViewSpy(), getRickAndMortySpy: GetRickAndMortySpy = GetRickAndMortySpy(), file: StaticString = #file, line: UInt = #line) -> RickAndMortyViewModel {
         let sut = RickAndMortyViewModel(alertView: alertView, getRickAndMorty: getRickAndMortySpy)
+        
+        checkMemoryLeak(for: sut, file: file, line: line)
         return sut
     }
     
