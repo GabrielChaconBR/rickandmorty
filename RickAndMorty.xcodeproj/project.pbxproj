@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08B258C02A87DF7500384E18 /* RickAndMortyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B258BF2A87DF7500384E18 /* RickAndMortyViewModel.swift */; };
+		08B258C12A87DF9800384E18 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A9268E2A8554F50003E93E /* Domain.framework */; };
+		08B258C22A87DF9800384E18 /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08A9268E2A8554F50003E93E /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08C8724D2A86A1E30034E6B6 /* GetRickAndMortyProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8724C2A86A1E30034E6B6 /* GetRickAndMortyProtocol.swift */; };
 		08C8724F2A86AB160034E6B6 /* RickAndMortyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8724E2A86AB160034E6B6 /* RickAndMortyModel.swift */; };
 		08C8725D2A86AB8E0034E6B6 /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C872552A86AB8E0034E6B6 /* Data.framework */; };
@@ -43,6 +46,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		08B258C32A87DF9800384E18 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08A9266A2A85545E0003E93E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08A9268D2A8554F50003E93E;
+			remoteInfo = Domain;
+		};
 		08C8725E2A86AB8E0034E6B6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08A9266A2A85545E0003E93E /* Project object */;
@@ -102,6 +112,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		08B258C52A87DF9800384E18 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				08B258C22A87DF9800384E18 /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		08C8726E2A86ABD40034E6B6 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -129,6 +150,7 @@
 /* Begin PBXFileReference section */
 		00B6E132DD5D8813FEB9D6C6 /* Pods-UseCasesIntegrationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UseCasesIntegrationsTests.release.xcconfig"; path = "Target Support Files/Pods-UseCasesIntegrationsTests/Pods-UseCasesIntegrationsTests.release.xcconfig"; sourceTree = "<group>"; };
 		08A9268E2A8554F50003E93E /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		08B258BF2A87DF7500384E18 /* RickAndMortyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyViewModel.swift; sourceTree = "<group>"; };
 		08C8724C2A86A1E30034E6B6 /* GetRickAndMortyProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRickAndMortyProtocol.swift; sourceTree = "<group>"; };
 		08C8724E2A86AB160034E6B6 /* RickAndMortyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RickAndMortyModel.swift; sourceTree = "<group>"; };
 		08C872552A86AB8E0034E6B6 /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -226,6 +248,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08B258C12A87DF9800384E18 /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +303,14 @@
 				08C872782A86C28F0034E6B6 /* Erros */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		08B258C62A87E05900384E18 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				08B258BF2A87DF7500384E18 /* RickAndMortyViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		08C872562A86AB8E0034E6B6 /* Data */ = {
@@ -422,6 +453,7 @@
 		08CADD1D2A87C51100484486 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				08B258C62A87E05900384E18 /* ViewModel */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -623,10 +655,12 @@
 				08CADD182A87C51100484486 /* Sources */,
 				08CADD192A87C51100484486 /* Frameworks */,
 				08CADD1A2A87C51100484486 /* Resources */,
+				08B258C52A87DF9800384E18 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				08B258C42A87DF9800384E18 /* PBXTargetDependency */,
 			);
 			name = ViewModel;
 			productName = ViewModel;
@@ -684,6 +718,7 @@
 					};
 					08CADD1B2A87C51100484486 = {
 						CreatedOnToolsVersion = 14.2;
+						LastSwiftMigration = 1420;
 					};
 					08CADD222A87C51100484486 = {
 						CreatedOnToolsVersion = 14.2;
@@ -943,6 +978,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08B258C02A87DF7500384E18 /* RickAndMortyViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -957,6 +993,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		08B258C42A87DF9800384E18 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08A9268D2A8554F50003E93E /* Domain */;
+			targetProxy = 08B258C32A87DF9800384E18 /* PBXContainerItemProxy */;
+		};
 		08C8725F2A86AB8E0034E6B6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 08C872542A86AB8E0034E6B6 /* Data */;
@@ -1418,6 +1459,7 @@
 		08CADD2B2A87C51100484486 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1440,6 +1482,7 @@
 				SDKROOT = macosx;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -1449,6 +1492,7 @@
 		08CADD2C2A87C51100484486 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1480,6 +1524,7 @@
 		08CADD2D2A87C51100484486 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1496,6 +1541,7 @@
 		08CADD2E2A87C51100484486 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
