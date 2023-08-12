@@ -21,11 +21,15 @@ class RickAndMortyViewModelTests: XCTestCase {
         let alertViewSpy = AlertViewSpy()
         let getRickAndMortySpy = GetRickAndMortySpy()
         let sut = makeSut(alertView: alertViewSpy, getRickAndMortySpy: getRickAndMortySpy)
+        let exp = expectation(description: "waiting")
+        alertViewSpy.observe { [weak self] alertView in
+            XCTAssertEqual(alertView, self?.makeErrorAlertViewModel(message: "Algo inesperado aconteceu, tente novamente."))
+            exp.fulfill()
+        }
         sut.rickAndMorty()
         getRickAndMortySpy.completeWithError(.unexpected)
-        XCTAssertEqual(alertViewSpy.alertView, makeErrorAlertViewModel(message: "Algo inesperado aconteceu, tente novamente."))
+        wait(for: [exp], timeout: 1)
     }
-
 }
 
 extension RickAndMortyViewModelTests {
@@ -37,9 +41,14 @@ extension RickAndMortyViewModelTests {
     
     class AlertViewSpy: AlertView {
         var alertView: AlertViewModel?
+        var emit: ((AlertViewModel) -> Void)?
+        
+        func observe(completion: @escaping (AlertViewModel) -> Void) {
+            self.emit = completion
+        }
         
         func showMessage(alertViewModel: AlertViewModel) {
-            self.alertView = alertViewModel
+            self.emit?(alertViewModel)
         }
     }
     
