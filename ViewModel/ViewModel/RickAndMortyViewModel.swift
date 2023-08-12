@@ -10,15 +10,21 @@ import Domain
 
 public final class RickAndMortyViewModel {
     
+    private let alertView: AlertView
     private let getRickAndMorty: GetRickAndMortyProtocol
     
-    public init(getRickAndMorty: GetRickAndMortyProtocol) {
+    public init(alertView: AlertView, getRickAndMorty: GetRickAndMortyProtocol) {
+        self.alertView = alertView
         self.getRickAndMorty = getRickAndMorty
     }
     
     public func rickAndMorty() {
-        getRickAndMorty.getRickAndMorty { _ in
-            
+        getRickAndMorty.getRickAndMorty { result in
+            switch result {
+            case .failure:
+                self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente."))
+            case .success: break
+            }
         }
     }
 }
