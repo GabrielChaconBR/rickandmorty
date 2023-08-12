@@ -34,15 +34,10 @@ class AlamofireAdapterTests: XCTestCase {
     
     func test_get_should_make_request_with_valid_url_and_method() {
         let url = makeUrl()
-        let sut = makeSut()
-        sut.get(to: url) { _ in }
-        let exp = expectation(description: "waiting")
-        UrlProtocolStub.observeRequest { request in
+        testRequestFor(url: url) { request in
             XCTAssertEqual(url, request.url)
             XCTAssertEqual("GET", request.httpMethod)
-            exp.fulfill()
         }
-        wait(for: [exp], timeout: 1)
     }
     
     func test_get_should_complete_with_error_when_completes_with_error() {
@@ -71,6 +66,16 @@ extension AlamofireAdapterTests {
         let sut = AlamofireAdapter(session: session)
         checkMemoryLeak(for: sut, file: file, line: line)
         return sut
+    }
+    
+    func testRequestFor(url: URL = makeUrl(), action: @escaping (URLRequest) -> Void) {
+        let sut = makeSut()
+        let exp = expectation(description: "waiting")
+        sut.get(to: url) { _ in exp.fulfill()}
+        var request: URLRequest?
+        UrlProtocolStub.observeRequest { request = $0 }
+        wait(for: [exp], timeout: 1)
+        action(request!)
     }
 }
 
