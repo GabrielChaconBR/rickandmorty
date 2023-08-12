@@ -9,3 +9,7 @@ end
 target 'InfraTests' do
   use_frameworks!
 end
+
+target 'UseCasesIntegrationsTests' do
+  use_frameworks!
+end
