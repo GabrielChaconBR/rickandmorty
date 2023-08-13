@@ -11,7 +11,7 @@ import UI
 
 public final class SplashComposer {
     
-    static func composeControllerWith(remoteRickAndMorty: GetRickAndMortyProtocol ) -> SplashViewController {
+    public static func composeControllerWith(remoteRickAndMorty: GetRickAndMortyProtocol ) -> SplashViewController {
         ControllerFactory.makeSplash(getRickAndMorty: remoteRickAndMorty)
     }
 }

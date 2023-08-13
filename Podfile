@@ -21,5 +21,9 @@ target 'Main' do
   target 'Infra' do
     project_pods
   end
+  
+  target 'MainTests' do
+    inherit! :search_paths
+  end
 
 end

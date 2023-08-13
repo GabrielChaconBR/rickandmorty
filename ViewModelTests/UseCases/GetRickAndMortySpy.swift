@@ -10,10 +10,14 @@ import Domain
 
 class GetRickAndMortySpy: GetRickAndMortyProtocol {
     
-    var completion: ((Result<Domain.RickAndMortyModel, Domain.DomainError>) -> Void)?
-    func getRickAndMorty(completion: @escaping (Result<Domain.RickAndMortyModel, Domain.DomainError>) -> Void) {
+    var completion: ((Result<RickAndMortyModel, DomainError>) -> Void)?
+    func getRickAndMorty(completion: @escaping (Result<RickAndMortyModel, DomainError>) -> Void) {
         
         self.completion = completion
+    }
+    
+    func completeWithData(_ data: RickAndMortyModel) {
+        completion?(.success(data))
     }
     
     func completeWithError(_ error: DomainError) {
