@@ -12,9 +12,13 @@ import Domain
 
 class UseCasesFactory {
     
+    private static let httpClient = AlamofireAdapter()
+    private static let apiBaseUrl = "https://rickandmortyapi.com/api"
+    
+    private static func makeUrl(path: String = "") -> URL {
+        URL(string: "\(apiBaseUrl)/\(path)")!
+    }
     static func makeRemoteRickAndMorty() -> RemoteRickAndMorty {
-        let alamofireAdapter = AlamofireAdapter()
-        let url = URL(string: "https://rickandmortyapi.com/api/")!
-        return RemoteRickAndMorty(url: url, httpClient: alamofireAdapter)
+        RemoteRickAndMorty(url: makeUrl(), httpClient: httpClient)
     }
 }
