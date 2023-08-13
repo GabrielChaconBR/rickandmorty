@@ -41,7 +41,6 @@
 		08B259532A8812E800384E18 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08B258DE2A87F91D00384E18 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08B259562A8812E800384E18 /* ViewModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CADD1C2A87C51100484486 /* ViewModel.framework */; };
 		08B259572A8812E800384E18 /* ViewModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08CADD1C2A87C51100484486 /* ViewModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		08B2595D2A88135900384E18 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2595C2A88135900384E18 /* ControllerFactory.swift */; };
 		08B2C6622A884873003291A9 /* SplashViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C6612A884873003291A9 /* SplashViewProtocol.swift */; };
 		08B2C6642A884883003291A9 /* SplashViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C6632A884883003291A9 /* SplashViewState.swift */; };
 		08B2C6662A884BBA003291A9 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C6652A884BBA003291A9 /* SplashViewControllerProtocol.swift */; };
@@ -300,7 +299,6 @@
 		08B259372A8810C600384E18 /* MainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITests.swift; sourceTree = "<group>"; };
 		08B259392A8810C600384E18 /* MainUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		08B259442A8812C800384E18 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08B2595C2A88135900384E18 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		08B2C6612A884873003291A9 /* SplashViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewProtocol.swift; sourceTree = "<group>"; };
 		08B2C6632A884883003291A9 /* SplashViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewState.swift; sourceTree = "<group>"; };
 		08B2C6652A884BBA003291A9 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -675,7 +673,6 @@
 		08B2595B2A88134A00384E18 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				08B2595C2A88135900384E18 /* ControllerFactory.swift */,
 				086469FD2A894486001E671B /* UseCasesFactory.swift */,
 			);
 			path = Factories;
@@ -1583,7 +1580,6 @@
 				08646A012A8945BE001E671B /* SplashComposer.swift in Sources */,
 				086469FE2A894486001E671B /* UseCasesFactory.swift in Sources */,
 				08B259172A8810C300384E18 /* AppDelegate.swift in Sources */,
-				08B2595D2A88135900384E18 /* ControllerFactory.swift in Sources */,
 				085B00D02A89553800B20765 /* WeakVarProxy.swift in Sources */,
 				08B259452A8812C800384E18 /* SceneDelegate.swift in Sources */,
 			);

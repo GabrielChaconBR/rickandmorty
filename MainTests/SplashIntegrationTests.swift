@@ -11,7 +11,7 @@ import Main
 final class SplashIntegrationTests: XCTestCase {
 
     func test_ui_viewModel_integration()  {
-        let sut = SplashComposer.composeControllerWith(remoteRickAndMorty: GetRickAndMortySpy())
+        let sut = SplashComposer.composeControllerWith(getRickAndMorty: GetRickAndMortySpy())
         checkMemoryLeak(for: sut)
     }
 }
