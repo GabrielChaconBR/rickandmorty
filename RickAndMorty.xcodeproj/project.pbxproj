@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		086469FE2A894486001E671B /* UseCasesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086469FD2A894486001E671B /* UseCasesFactory.swift */; };
+		08646A012A8945BE001E671B /* SplashComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08646A002A8945BE001E671B /* SplashComposer.swift */; };
 		08698C362A886DC100AA086E /* Infra.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08C872912A86EB030034E6B6 /* Infra.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08B258C02A87DF7500384E18 /* RickAndMortyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B258BF2A87DF7500384E18 /* RickAndMortyViewModel.swift */; };
 		08B258C12A87DF9800384E18 /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08A9268E2A8554F50003E93E /* Domain.framework */; };
@@ -35,7 +37,7 @@
 		08B259532A8812E800384E18 /* UI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08B258DE2A87F91D00384E18 /* UI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		08B259562A8812E800384E18 /* ViewModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CADD1C2A87C51100484486 /* ViewModel.framework */; };
 		08B259572A8812E800384E18 /* ViewModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 08CADD1C2A87C51100484486 /* ViewModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		08B2595D2A88135900384E18 /* SplashFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2595C2A88135900384E18 /* SplashFactory.swift */; };
+		08B2595D2A88135900384E18 /* ControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2595C2A88135900384E18 /* ControllerFactory.swift */; };
 		08B2C6622A884873003291A9 /* SplashViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C6612A884873003291A9 /* SplashViewProtocol.swift */; };
 		08B2C6642A884883003291A9 /* SplashViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C6632A884883003291A9 /* SplashViewState.swift */; };
 		08B2C6662A884BBA003291A9 /* SplashViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B2C6652A884BBA003291A9 /* SplashViewControllerProtocol.swift */; };
@@ -267,6 +269,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		086469FD2A894486001E671B /* UseCasesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesFactory.swift; sourceTree = "<group>"; };
+		08646A002A8945BE001E671B /* SplashComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashComposer.swift; sourceTree = "<group>"; };
 		086573012A8872C9000233F2 /* libAlamofire-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libAlamofire-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08698C312A886A2400AA086E /* libAlamofire-iOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libAlamofire-iOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		08A9268E2A8554F50003E93E /* Domain.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Domain.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -289,7 +293,7 @@
 		08B259372A8810C600384E18 /* MainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITests.swift; sourceTree = "<group>"; };
 		08B259392A8810C600384E18 /* MainUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		08B259442A8812C800384E18 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		08B2595C2A88135900384E18 /* SplashFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashFactory.swift; sourceTree = "<group>"; };
+		08B2595C2A88135900384E18 /* ControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerFactory.swift; sourceTree = "<group>"; };
 		08B2C6612A884873003291A9 /* SplashViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewProtocol.swift; sourceTree = "<group>"; };
 		08B2C6632A884883003291A9 /* SplashViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewState.swift; sourceTree = "<group>"; };
 		08B2C6652A884BBA003291A9 /* SplashViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewControllerProtocol.swift; sourceTree = "<group>"; };
@@ -455,6 +459,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		086469FF2A8945A5001E671B /* Composers */ = {
+			isa = PBXGroup;
+			children = (
+				08646A002A8945BE001E671B /* SplashComposer.swift */,
+			);
+			path = Composers;
+			sourceTree = "<group>";
+		};
 		08A926692A85545E0003E93E = {
 			isa = PBXGroup;
 			children = (
@@ -611,6 +623,7 @@
 		08B259152A8810C300384E18 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				086469FF2A8945A5001E671B /* Composers */,
 				08B2595B2A88134A00384E18 /* Factories */,
 				08B259442A8812C800384E18 /* SceneDelegate.swift */,
 				08B259162A8810C300384E18 /* AppDelegate.swift */,
@@ -639,7 +652,8 @@
 		08B2595B2A88134A00384E18 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				08B2595C2A88135900384E18 /* SplashFactory.swift */,
+				08B2595C2A88135900384E18 /* ControllerFactory.swift */,
+				086469FD2A894486001E671B /* UseCasesFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -1514,8 +1528,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08646A012A8945BE001E671B /* SplashComposer.swift in Sources */,
+				086469FE2A894486001E671B /* UseCasesFactory.swift in Sources */,
 				08B259172A8810C300384E18 /* AppDelegate.swift in Sources */,
-				08B2595D2A88135900384E18 /* SplashFactory.swift in Sources */,
+				08B2595D2A88135900384E18 /* ControllerFactory.swift in Sources */,
 				08B259452A8812C800384E18 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
