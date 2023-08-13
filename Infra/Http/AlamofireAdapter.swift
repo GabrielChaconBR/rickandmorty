@@ -44,7 +44,6 @@ public final class AlamofireAdapter: HttpGetClientProtocol {
                 default:
                     completion(.failure(.noConnectivity))
                 }
-                
             }
         }
     }
