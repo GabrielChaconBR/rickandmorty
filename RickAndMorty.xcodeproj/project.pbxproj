@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		085B00CC2A8951F100B20765 /* GetRickAndMortySpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08B258D72A87F62E00384E18 /* GetRickAndMortySpy.swift */; };
 		085B00CD2A89524E00B20765 /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C872832A86E5290034E6B6 /* TestExtension.swift */; };
+		085B00D02A89553800B20765 /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B00CF2A89553800B20765 /* WeakVarProxy.swift */; };
 		086469FE2A894486001E671B /* UseCasesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 086469FD2A894486001E671B /* UseCasesFactory.swift */; };
 		08646A012A8945BE001E671B /* SplashComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08646A002A8945BE001E671B /* SplashComposer.swift */; };
 		08646A032A89491F001E671B /* SplashIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08646A022A89491F001E671B /* SplashIntegrationTests.swift */; };
@@ -273,6 +274,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		085B00CF2A89553800B20765 /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		086469FD2A894486001E671B /* UseCasesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCasesFactory.swift; sourceTree = "<group>"; };
 		08646A002A8945BE001E671B /* SplashComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashComposer.swift; sourceTree = "<group>"; };
 		08646A022A89491F001E671B /* SplashIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashIntegrationTests.swift; sourceTree = "<group>"; };
@@ -470,6 +472,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		085B00CE2A89552500B20765 /* Proxies */ = {
+			isa = PBXGroup;
+			children = (
+				085B00CF2A89553800B20765 /* WeakVarProxy.swift */,
+			);
+			path = Proxies;
+			sourceTree = "<group>";
+		};
 		086469FF2A8945A5001E671B /* Composers */ = {
 			isa = PBXGroup;
 			children = (
@@ -634,6 +644,7 @@
 		08B259152A8810C300384E18 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				085B00CE2A89552500B20765 /* Proxies */,
 				086469FF2A8945A5001E671B /* Composers */,
 				08B2595B2A88134A00384E18 /* Factories */,
 				08B259442A8812C800384E18 /* SceneDelegate.swift */,
@@ -1573,6 +1584,7 @@
 				086469FE2A894486001E671B /* UseCasesFactory.swift in Sources */,
 				08B259172A8810C300384E18 /* AppDelegate.swift in Sources */,
 				08B2595D2A88135900384E18 /* ControllerFactory.swift in Sources */,
+				085B00D02A89553800B20765 /* WeakVarProxy.swift in Sources */,
 				08B259452A8812C800384E18 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
