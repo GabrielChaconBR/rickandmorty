@@ -44,6 +44,8 @@ final public class HomeViewCell: UITableViewCell, ReusableCell {
     
     private func buildViewHierarchy() {
         addSubview(view)
+        
+        addSubview(cardView)
     }
     
     private func addConstraints() {

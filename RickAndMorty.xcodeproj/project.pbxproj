@@ -22,8 +22,6 @@
 		085B00FE2A8988ED00B20765 /* HomeViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B00FB2A8988ED00B20765 /* HomeViewState.swift */; };
 		085B00FF2A8988ED00B20765 /* HomeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B00FC2A8988ED00B20765 /* HomeViewProtocol.swift */; };
 		085B01002A8988ED00B20765 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B00FD2A8988ED00B20765 /* HomeView.swift */; };
-		085B01032A898E0800B20765 /* UIDataSourceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B01022A898E0800B20765 /* UIDataSourceDelegate.swift */; };
-		085B01052A898E5700B20765 /* UIDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B01042A898E5700B20765 /* UIDataSource.swift */; };
 		085B01072A898F7D00B20765 /* HomeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B01062A898F7D00B20765 /* HomeDataSource.swift */; };
 		085B010B2A8990C000B20765 /* ReusableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B010A2A8990C000B20765 /* ReusableCell.swift */; };
 		085B010D2A8992AE00B20765 /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085B010C2A8992AE00B20765 /* HomeViewCell.swift */; };
@@ -301,8 +299,6 @@
 		085B00FB2A8988ED00B20765 /* HomeViewState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewState.swift; sourceTree = "<group>"; };
 		085B00FC2A8988ED00B20765 /* HomeViewProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewProtocol.swift; sourceTree = "<group>"; };
 		085B00FD2A8988ED00B20765 /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		085B01022A898E0800B20765 /* UIDataSourceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDataSourceDelegate.swift; sourceTree = "<group>"; };
-		085B01042A898E5700B20765 /* UIDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDataSource.swift; sourceTree = "<group>"; };
 		085B01062A898F7D00B20765 /* HomeDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDataSource.swift; sourceTree = "<group>"; };
 		085B010A2A8990C000B20765 /* ReusableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableCell.swift; sourceTree = "<group>"; };
 		085B010C2A8992AE00B20765 /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
@@ -533,8 +529,6 @@
 			children = (
 				085B010E2A89931900B20765 /* Views */,
 				085B00D52A8977B600B20765 /* NavigationController.swift */,
-				085B01022A898E0800B20765 /* UIDataSourceDelegate.swift */,
-				085B01042A898E5700B20765 /* UIDataSource.swift */,
 				085B010A2A8990C000B20765 /* ReusableCell.swift */,
 			);
 			path = Components;
@@ -1830,9 +1824,7 @@
 				085B00FE2A8988ED00B20765 /* HomeViewState.swift in Sources */,
 				08B2C6682A884D38003291A9 /* SplashViewController.swift in Sources */,
 				085B00FF2A8988ED00B20765 /* HomeViewProtocol.swift in Sources */,
-				085B01032A898E0800B20765 /* UIDataSourceDelegate.swift in Sources */,
 				08B259092A8801A000384E18 /* SplashView.swift in Sources */,
-				085B01052A898E5700B20765 /* UIDataSource.swift in Sources */,
 				085B00D62A8977B600B20765 /* NavigationController.swift in Sources */,
 				08C0F46A2A8A015C003A11EE /* HomeViewEntity.swift in Sources */,
 				08B2C6622A884873003291A9 /* SplashViewProtocol.swift in Sources */,

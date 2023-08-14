@@ -8,19 +8,23 @@
 import Foundation
 import UIKit
 
-class HomeDataSource: UIDataSource<ItemViewEntity> {
+class HomeTableViewDataSource: NSObject, UITableViewDataSource {
+    var items: [ItemViewEntity]
+    
+    init(items: [ItemViewEntity]) {
+        self.items = items
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfItems()
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: HomeViewCell.reuseIdentifier,
                                                        for: indexPath) as? HomeViewCell else { return UITableViewCell() }
         
-        if let entity = item(at: indexPath.row) {
+        let entity = self.items[indexPath.row]
             cell.updateView(with: entity)
-        }
         
         return cell
     }

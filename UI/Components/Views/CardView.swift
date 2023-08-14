@@ -10,7 +10,12 @@ import Kingfisher
 
 final public class CardView: UIView {
     
-    // MARK: - UI
+    private enum Values {
+        static let borderWidth: CGFloat = 2
+        static let viewMargin: CGFloat = 8
+        static let photoImageViewHeight: CGFloat = 80
+        static let photoImageViewWidth: CGFloat = 80
+    }
     
     private lazy var view: UIView = {
         let view = UIView()
@@ -22,6 +27,8 @@ final public class CardView: UIView {
     private lazy var photoImageView: UIImageView = {
         let view = UIImageView()
         view.translatesAutoresizingMaskIntoConstraints = false
+        view.layer.borderWidth = Values.borderWidth
+        view.contentMode = .scaleAspectFit
         return view
     }()
     
@@ -48,17 +55,20 @@ final public class CardView: UIView {
     
     private func buildViewHierarchy() {
         addSubview(view)
+        
+        view.addSubview(photoImageView)
+        view.addSubview(nameLabel)
     }
     
     private func addConstraints() {
         view.pinToSuperview()
         
-        photoImageView.pinToSuperview(sides: [.top, .left, .bottom])
+        photoImageView.pinToSuperview(sides: [.top, .left, .bottom], constant: Values.viewMargin)
         photoImageView.centerVerticalToSuperview()
-        photoImageView.width(equalToConstant: 24)
-        photoImageView.height(equalToConstant: 24)
+        photoImageView.width(equalToConstant: Values.photoImageViewWidth)
+        photoImageView.height(equalToConstant: Values.photoImageViewHeight)
         
-        nameLabel.right(to: photoImageView, constant: 8)
+        nameLabel.right(to: photoImageView, constant: Values.viewMargin)
         nameLabel.centerVertical(to: photoImageView)
     }
     

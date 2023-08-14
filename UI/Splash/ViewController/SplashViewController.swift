@@ -38,6 +38,7 @@ public class SplashViewController: UIViewController {
         if let contentView = contentView {
             self.view = contentView.content
         }
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
     }
 }
 
