@@ -7,12 +7,22 @@
 
 import Foundation
 import Domain
+import UI
 
 class HomeFactory {
-
-    private let data: WelcomeModel
     
-    internal init(data: WelcomeModel) {
-        self.data = data
+    public func make(_ data: WelcomeModel) -> HomeViewEntity {
+        return HomeViewEntity(items: makeItems(data: data.results))
+    }
+    
+    private func makeItems(data: [ResultModel]) -> [ItemViewEntity] {
+        let items = data.map { item in
+            ItemViewEntity(image: URL(string: item.image), name: item.name)
+        }
+        return items
+    }
+    
+    public func makeAlert(_ data: AlertViewModel) -> AlertViewEntity {
+        return AlertViewEntity(title: data.title, message: data.message)
     }
 }

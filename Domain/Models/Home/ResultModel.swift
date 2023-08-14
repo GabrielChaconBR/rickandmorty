@@ -9,8 +9,8 @@ import Foundation
 
 public struct ResultModel: Model {
 
-    let image: String
-    let name: String
+    public let image: String
+    public let name: String
     
     public init(image: String, name: String) {
         self.image = image

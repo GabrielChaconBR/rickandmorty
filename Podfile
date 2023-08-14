@@ -2,16 +2,20 @@
 # platform :ios, '9.0'
 use_frameworks!
 
-def project_pods
+def project_afpods
   pod 'Alamofire'
 end
 
+def project_kfpods
+  pod 'Kingfisher', '~> 7.0'
+end
+
 target 'InfraTests' do
-  project_pods
+  project_afpods
 end
 
 target 'UseCasesIntegrationsTests' do
-  project_pods
+  project_afpods
 end
 
 target 'Main' do
@@ -19,7 +23,11 @@ target 'Main' do
   use_frameworks!
   
   target 'Infra' do
-    project_pods
+    project_afpods
+  end
+  
+  target 'UI' do
+    project_kfpods
   end
   
   target 'MainTests' do

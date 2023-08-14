@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import ViewModel
 
 public class SplashViewController: UIViewController {
 
     public let contentView: SplashViewProtocol?
     public var rickAndMorty: (() -> Void)?
+    public var splashRouter: ((String) -> Void)?
 
     public init(contentView: SplashViewProtocol = SplashView()) {
         self.contentView = contentView
@@ -31,12 +31,7 @@ public class SplashViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         rickAndMorty?()
-    }
-    
-    // MARK: - PRIVATE
-    private func setup() {
     }
 
     private func contentSetup() {
@@ -46,12 +41,13 @@ public class SplashViewController: UIViewController {
     }
 }
 
-extension SplashViewController: SplashViewDelegate {
-
-}
-
-extension SplashViewController: AlertView {
-    public func showMessage(alertViewModel: ViewModel.AlertViewModel) {
-        // TODO: Apresenta alerta em caso de erro
+extension SplashViewController: SplashViewModelProtocol {
+    public func viewState(state: SplashViewState) {
+        switch state {
+        case .hasData(let data):
+            splashRouter?(data)
+        default:
+            break
+        }
     }
 }

@@ -11,10 +11,6 @@ public protocol SplashViewProtocol: AnyObject {
     var content: UIView { get }
 }
 
-public protocol SplashViewDelegate: AnyObject {
-    
-}
-
 extension SplashViewProtocol where Self: UIView {
     public var content: UIView { return self }
 }

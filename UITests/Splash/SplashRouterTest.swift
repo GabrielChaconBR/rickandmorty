@@ -10,25 +10,30 @@ import UIKit
 import ViewModel
 @testable import UI
 
-public final class SplashRouter {
-    private let nav: NavigationController
-    
-    public init(nav: NavigationController) {
-       self.nav = nav
-    }
-    
-    public func goToHome() {
-        
-    }
-}
-
 class SplashRouterTests: XCTestCase {
     
     func test_goToHome_calls_nav_with_correct_vc() {
+        let (sut, nav) = makeSut()
+        sut.goToHome()
+        XCTAssertEqual(nav.viewControllers.count, 1)
+        XCTAssertTrue(nav.viewControllers[0] is HomeViewController)
+    }
+}
+
+extension SplashRouterTests {
+    func makeSut() -> (sut: SplashRouter, nav: NavigationController) {
+        let homeFactorySpy = HomeFactorySpy()
         let nav = NavigationController()
-        //let sut = SplashRouter(nav: nav, homeFactory: HomeFactorySpy)
-        //sut.goToHome()
-        //XCTAssertTrue(nav.viewControllers[0] is SplashViewController)
+        let sut = SplashRouter(nav: nav, homeFactory: homeFactorySpy.makeHome)
+        return (sut, nav)
+    }
+}
+
+extension SplashRouterTests {
+    class HomeFactorySpy {
+        func makeHome() -> HomeViewController {
+            return HomeViewController()
+        }
     }
 }
 

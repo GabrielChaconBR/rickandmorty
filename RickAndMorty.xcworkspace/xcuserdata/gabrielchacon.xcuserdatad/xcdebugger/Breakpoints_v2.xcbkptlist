@@ -7,80 +7,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "3C47D9C2-70F4-42B0-8198-C158167DAF7F"
+            uuid = "F2ACC912-7A29-4712-BCAD-EFE5F2F61398"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "UI/Home/ViewController/HomeViewController.swift"
+            filePath = "UI/Components/Views/CardView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "65"
-            endingLineNumber = "65"
-            landmarkName = "showMessage(alertViewModel:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "updateView(with:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "255B2E51-898A-46B7-8739-6DBABA1C40B7"
+            uuid = "9F144373-A63E-4E0F-B307-13F62B2360ED"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ViewModel/ViewModel/Home/ListRickAndMortyViewModel.swift"
+            filePath = "UI/Home/ViewController/HomeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "listRickAndMorty()"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "updateView(with:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "255B2E51-898A-46B7-8739-6DBABA1C40B7 - 2ba909dd299e9699"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Domain.WelcomeModel, Domain.DomainError&gt;) -&gt; () in ViewModel.ListRickAndMortyViewModel.listRickAndMorty() -&gt; ()"
-                  moduleName = "ViewModel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielchacon/Documents/RickAndMortyProject/RickAndMorty/ViewModel/ViewModel/Home/ListRickAndMortyViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "236">
-               </Location>
-               <Location
-                  uuid = "255B2E51-898A-46B7-8739-6DBABA1C40B7 - 98c452cdc99cb89f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Result&lt;Domain.WelcomeModel, Domain.DomainError&gt;) -&gt; () in ViewModel.ListRickAndMortyViewModel.listRickAndMorty() -&gt; ()"
-                  moduleName = "ViewModel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielchacon/Documents/RickAndMortyProject/RickAndMorty/ViewModel/ViewModel/Home/ListRickAndMortyViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "97">
-               </Location>
-               <Location
-                  uuid = "255B2E51-898A-46B7-8739-6DBABA1C40B7 - 2ba909dd299e9699"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Result&lt;Domain.WelcomeModel, Domain.DomainError&gt;) -&gt; () in ViewModel.ListRickAndMortyViewModel.listRickAndMorty() -&gt; ()"
-                  moduleName = "ViewModel"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/gabrielchacon/Documents/RickAndMortyProject/RickAndMorty/ViewModel/ViewModel/Home/ListRickAndMortyViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "128">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

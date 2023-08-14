@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 final public class CardView: UIView {
     
@@ -62,7 +63,7 @@ final public class CardView: UIView {
     }
     
     public func updateView(with entity: ItemViewEntity) {
-        photoImageView.image = entity.image
+        photoImageView.kf.setImage(with: entity.image)
         nameLabel.text = entity.name
     }
 }

@@ -7,14 +7,15 @@
 
 import Foundation
 import Domain
+import UI
 
 public final class ListRickAndMortyViewModel {
     
-    private let alertView: AlertView
+    private let delegate: HomeViewModelProtocol
     private let getListRickAndMorty: GetListRickAndMortyProtocol
     
-    public init(alertView: AlertView, getListRickAndMorty: GetListRickAndMortyProtocol) {
-        self.alertView = alertView
+    public init(delegate: HomeViewModelProtocol, getListRickAndMorty: GetListRickAndMortyProtocol) {
+        self.delegate = delegate
         self.getListRickAndMorty = getListRickAndMorty
     }
     
@@ -23,14 +24,20 @@ public final class ListRickAndMortyViewModel {
             guard let self = self else { return }
             switch result {
             case .failure:
-                self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente."))
-            case .success:
-                self.alertView.showMessage(alertViewModel: AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente."))
+                self.failure()
+            case .success(let data):
+                self.success(data)
             }
         }
     }
     
-    private func success(data: WelcomeModel) {
-        
+    private func success(_ data: WelcomeModel) {
+        let entity = HomeFactory().make(data)
+        self.delegate.viewState(state: .hasData(entity))
+    }
+    
+    private func failure() {
+        let alert = HomeFactory().makeAlert(AlertViewModel(title: "Erro", message: "Algo inesperado aconteceu, tente novamente.")) // Em app real strings não deveriam estar hardcode
+        self.delegate.viewState(state: .hasError(alert))
     }
 }

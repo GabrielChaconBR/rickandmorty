@@ -11,3 +11,7 @@ public protocol SplashViewControllerProtocol: AnyObject {
     var contentView: SplashViewProtocol? { get }
     func updateView(with viewState: SplashViewState)
 }
+
+public protocol SplashViewModelProtocol: AnyObject {
+    func viewState(state: SplashViewState)
+}
