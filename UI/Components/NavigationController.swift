@@ -30,7 +30,7 @@ public final class NavigationController: UINavigationController {
         navigationBar.barTintColor = UIColor.white
         navigationBar.tintColor = UIColor.white
         navigationBar.titleTextAttributes = [.foregroundColor: UIColor.black]
-        navigationBar.isTranslucent = false
+        navigationBar.isTranslucent = true
         isNavigationBarHidden = false
     }
     
