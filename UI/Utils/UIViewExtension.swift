@@ -21,40 +21,32 @@ enum AnchorOrientation {
 
 extension UIView {
 
-    func above(to view: UIView, constant: CGFloat = 0) -> UIView {
+    func above(to view: UIView, constant: CGFloat = 0) {
 
         translatesAutoresizingMaskIntoConstraints = false
 
         bottomAnchor.constraint(equalTo: view.topAnchor, constant: constant).isActive = true
-        
-        return self
     }
 
-    func bellow(to view: UIView, constant: CGFloat = 0) -> UIView {
+    func bellow(to view: UIView, constant: CGFloat = 0) {
 
         translatesAutoresizingMaskIntoConstraints = false
 
         topAnchor.constraint(equalTo: view.bottomAnchor, constant: constant).isActive = true
-        
-        return self
     }
 
-    func right(to view: UIView, constant: CGFloat = 0) -> UIView {
+    func right(to view: UIView, constant: CGFloat = 0) {
 
         translatesAutoresizingMaskIntoConstraints = false
 
         leftAnchor.constraint(equalTo: view.rightAnchor, constant: constant).isActive = true
-        
-        return self
     }
 
-    func left(to view: UIView, constant: CGFloat = 0) -> UIView {
+    func left(to view: UIView, constant: CGFloat = 0) {
 
         translatesAutoresizingMaskIntoConstraints = false
 
         rightAnchor.constraint(equalTo: view.leftAnchor, constant: constant).isActive = true
-        
-        return self
     }
 
     func pin(to view: UIView, sides: [AnchorPosition] = [.top, .bottom, .left, .right], constant: CGFloat = 0) {

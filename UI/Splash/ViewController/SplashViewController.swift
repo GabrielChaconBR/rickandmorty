@@ -52,6 +52,6 @@ extension SplashViewController: SplashViewDelegate {
 
 extension SplashViewController: AlertView {
     public func showMessage(alertViewModel: ViewModel.AlertViewModel) {
-        
+        // TODO: Apresenta alerta em caso de erro
     }
 }
